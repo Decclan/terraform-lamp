@@ -1,12 +1,13 @@
 #create EC2 instance
 resource "aws_instance" "my_web_instance" {
+  #count                  = 2
   ami                    = lookup(var.images, var.region)
   instance_type          = "t2.micro"
   key_name               = "MyKeyPair"
   vpc_security_group_ids = ["${aws_security_group.web_security_group.id}"]
   subnet_id              = aws_subnet.myvpc_public_subnet.id
   tags = {
-    Name = "my_web_instance"
+    Name = "my_web_instance" #${count.index}
   }
   volume_tags = {
     Name = "my_web_instance_volume"
@@ -35,3 +36,4 @@ resource "aws_instance" "my_web_instance" {
     private_key = file("/home/decclan/Development/terraform-lamp/MyKeyPair.pem")
   }
 }
+
