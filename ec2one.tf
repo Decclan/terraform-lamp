@@ -32,6 +32,6 @@ resource "aws_instance" "my_web_instance" {
     password = ""
     host     = self.public_ip
 
-    private_key = file("/home/decclan/Development/TerraformLAMP/MyKeyPair.pem")
+    private_key = file("/home/decclan/Development/terraform-lamp/MyKeyPair.pem")
   }
 }

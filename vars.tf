@@ -6,8 +6,12 @@
 #  default = "<your_secret_key>"
 #}
 variable "region" {
-  default = "ap-south-1"
+  default = "eu-west-1"
 }
+variable "acm_region" {
+  default = "us-east-1"
+}
+
 variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
@@ -26,6 +30,7 @@ variable "web_ports" {
 variable "db_ports" {
   default = ["22", "3306"]
 }
+
 variable "images" {
   type = map(string)
   default = {

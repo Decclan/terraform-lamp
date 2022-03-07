@@ -1,5 +1,5 @@
 <?php
-$link = mysql_connect('<your_aws_mysql_rds_endpoint>', 'myuser', 'mypassword');
+$link = mysql_connect('mysqldb.cdguuqgp96qv.eu-west-1.rds.amazonaws.com', 'myuser', 'mypassword');
 if (!$link)
 {
 die('Could not connect: ' . mysql_error());
